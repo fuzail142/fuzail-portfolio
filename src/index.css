@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3b82f6;
+  --secondary: #1e40af;
+}
+
+body {
+  @apply bg-gray-50 text-gray-800;
+}
+
+.section-title {
+  @apply text-3xl font-bold mb-8 text-center relative;
+}
+
+.section-title::after {
+  content: '';
+  @apply absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-500 rounded-full;
+}
