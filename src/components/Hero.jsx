@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import profileImage from '../assets/fuzail.png'; // Corrected import (without curly braces)
 
 const Hero = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -63,7 +64,7 @@ const Hero = () => {
         >
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary-light dark:border-primary-dark shadow-2xl transition-all duration-500 hover:scale-105 group">
             <img 
-              src="/src/assets/fuzail.png" 
+              src={profileImage} // Corrected usage (without quotes)
               alt="Muhammad Fuzail"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               onError={(e) => {
