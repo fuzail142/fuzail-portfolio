@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import profileImage from '../assets/fuzail.png'; // Corrected import (without curly braces)
+import profileImage from '../assets/fuzail.png';
 
 const Hero = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -64,7 +64,7 @@ const Hero = () => {
         >
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary-light dark:border-primary-dark shadow-2xl transition-all duration-500 hover:scale-105 group">
             <img 
-              src={profileImage} // Corrected usage (without quotes)
+              src={profileImage}
               alt="Muhammad Fuzail"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               onError={(e) => {
@@ -74,8 +74,10 @@ const Hero = () => {
                   : "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect fill='%23bfdbfe' width='200' height='200'/%3E%3Ctext fill='%233b82f6' font-family='sans-serif' font-size='72' dy='.35em' text-anchor='middle' x='100' y='100'%3EMF%3C/text%3E%3C/svg%3E";
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-              <span className="text-white text-lg font-medium">MERN Stack Developer</span>
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-6 px-4">
+              <span className="text-white text-lg font-medium text-center w-full">
+                MERN Stack Developer
+              </span>
             </div>
           </div>
         </motion.div>

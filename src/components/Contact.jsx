@@ -60,7 +60,7 @@ const Contact = () => {
                 <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Your Name</label>
                 <input
                   type="text"
-                  name="user_name"  // Matches the placeholder in the template
+                  name="user_name"
                   id="name"
                   required
                   className="w-full px-5 py-4 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white/70 dark:bg-gray-700/50 backdrop-blur-sm"
@@ -71,7 +71,7 @@ const Contact = () => {
                 <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Email Address</label>
                 <input
                   type="email"
-                  name="user_email"  // Matches the placeholder in the template
+                  name="user_email"
                   id="email"
                   required
                   className="w-full px-5 py-4 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white/70 dark:bg-gray-700/50 backdrop-blur-sm"
@@ -81,7 +81,7 @@ const Contact = () => {
               <div>
                 <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Your Message</label>
                 <textarea
-                  name="message"  // Matches the placeholder in the template
+                  name="message"
                   id="message"
                   rows={5}
                   required
@@ -119,9 +119,12 @@ const Contact = () => {
                   <div className="p-3 rounded-xl bg-blue-100 dark:bg-blue-900/50 text-primary-light dark:text-primary-dark">
                     <FaEnvelope className="text-xl" />
                   </div>
-                  <div>
+                  <div className="overflow-hidden">
                     <h4 className="font-medium text-gray-700 dark:text-gray-300">Email</h4>
-                    <a href="mailto:fuzailkhalil142@gmail.com" className="text-primary-light dark:text-primary-dark hover:underline">
+                    <a 
+                      href="mailto:fuzailkhalil142@gmail.com" 
+                      className="text-primary-light dark:text-primary-dark hover:underline break-all"
+                    >
                       fuzailkhalil142@gmail.com
                     </a>
                   </div>
@@ -132,13 +135,13 @@ const Contact = () => {
                   <div className="p-3 rounded-xl bg-blue-600 text-white">
                     <FaLinkedin className="text-xl" />
                   </div>
-                  <div>
+                  <div className="overflow-hidden">
                     <h4 className="font-medium text-gray-700 dark:text-gray-300">LinkedIn</h4>
                     <a 
                       href="https://www.linkedin.com/in/muhammad-fuzail-3980592aa" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-primary-light dark:text-primary-dark hover:underline"
+                      className="text-primary-light dark:text-primary-dark hover:underline break-all"
                     >
                       linkedin.com/in/muhammad-fuzail-3980592aa
                     </a>
