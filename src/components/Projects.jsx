@@ -120,7 +120,7 @@ const Projects = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/fuzail142"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border border-primary-light dark:border-primary-dark text-primary-light dark:text-primary-dark hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors"
