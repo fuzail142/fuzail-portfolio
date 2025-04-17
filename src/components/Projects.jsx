@@ -25,6 +25,15 @@ const Projects = () => {
       imageUrl: "https://media-hosting.imagekit.io/18f9eae7b72a4fb7/Screenshot%202025-04-07%20224044.png?Expires=1838655739&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=YRV~Xt4BWUuMXmbguUlN-s70z7-uO6pz09LzS0hxpgcskvSwe1UWRiYiOdUticu-rf6TqGIhwWaDdenBaEPB5oj2AOMzUr3n-TJeB-6LxN0fspUArohbW~FSPSXn5VYkyZFoQe3mLYJKD4WsMEvaJ~tcr4SlTOBA5dh1ac9xBSWVvpLw0-doSPsgmiSvDVquz6v1czvFaOuBYaaVg-A-NrYZl0RTUgPNcdWXdbAniIlrzT961waeAGAfInZgC0bgfGlJWqDQ20I0CwVnNjgImd4d1fy8GihlaqRbA-n7M3PUPP8461qNbTtOmEW0M1AIREthlqMZWdRU95GmGs39SA__",
       liveUrl: "https://net-weather.vercel.app/",
       codeUrl: "https://github.com/fuzail142/beat-weather"
+    },
+    {
+      id: 3,
+      title: "taecafe",
+      description: "TeaCafe is a modern, responsive e-commerce website designed for tea enthusiasts. Built with React, Vite, and Tailwind CSS, this project showcases a beautiful UI with smooth animations, a functional shopping cart, and an intuitive filtering system.",
+      technologies: ["React,vite", "TailwindCSS", "Framer Motion", "React icons"],
+      imageUrl: "https://media-hosting.imagekit.io/d3a149c97ae644e9/Screenshot%202025-04-18%20040145.png?Expires=1839539072&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=cGc~D~L40tGf6K9wH6tOPEtZCc3DCRhs-ncO7rAHiis36a-Z5WZZcJEcFrv4zOtW1vC9-bXOocx1CnOG84kvb2Xa7fXOtA8VyBdyTTRrVOufo4O9pTKMzzrEAV1z5rvlPjk~dvEOedOnc56MLY-ahBn5yCyp-13UiP~YJKQqUrS4Im7wz~~UX7W3r8xaMEUekzYc7TCS2R~~s1XIjWPt74FSKtoRx0FX93rU4iWTs2i4-uJ5ZonH9a4AMGFb8v-RcJsn8Z~Pw1MoD~OO20kGrNlh2TYkQk8haWZzLqC4GCR0CMOSQmIGu8GW66B~h0Qc0ga0nK5xR-0QzgSBPJnlSg__",
+      liveUrl: "https://teacafe.vercel.app/",
+      codeUrl: "https://github.com/fuzail142/teacafe"
     }
   ];
 
