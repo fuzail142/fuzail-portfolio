@@ -7,7 +7,14 @@ import profileImage from '../assets/fuzail.png';
 const Hero = () => {
   const { darkMode } = useContext(ThemeContext);
   const [text] = useTypewriter({
-    words: ['MERN Stack Developer', 'Frontend Specialist', 'Backend Engineer', 'Problem Solver'],
+    words: [
+      'MERN Stack Developer',
+      'Frontend Specialist',
+      'Backend Engineer',
+      'Visual Content Creator',
+      'YouTube & Reels Editor',
+      'Problem Solver',
+    ],
     loop: true,
     typeSpeed: 70,
     deleteSpeed: 50,
@@ -17,9 +24,54 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 pt-20"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 pt-20 relative overflow-hidden"
     >
-      <div className="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
+      {/* Floating 3D shapes in background */}
+      <motion.div 
+        className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-blue-500/10 dark:bg-blue-400/10"
+        animate={{
+          y: [0, -30, 0],
+          x: [0, 20, 0],
+          scale: [1, 1.1, 1]
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      
+      <motion.div 
+        className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-purple-500/10 dark:bg-purple-400/10"
+        animate={{
+          y: [0, 30, 0],
+          x: [0, -20, 0],
+          scale: [1, 1.2, 1]
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2
+        }}
+      />
+      
+      <motion.div 
+        className="absolute top-1/3 right-1/3 w-24 h-24 rounded-full bg-green-500/10 dark:bg-green-400/10"
+        animate={{
+          y: [0, -20, 0],
+          x: [0, 15, 0],
+          rotate: [0, 180, 360]
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        }}
+      />
+
+      <div className="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center relative z-10">
         <motion.div 
           className="md:w-1/2 mb-12 md:mb-0"
           initial={{ opacity: 0, x: -50 }}
@@ -34,7 +86,7 @@ const Hero = () => {
             <Cursor cursorColor={darkMode ? '#60a5fa' : '#3b82f6'} />
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
-            I build blazing-fast, high-performance web applications with modern technologies like React, Node.js, MongoDB, and Express.
+            I craft blazing-fast web apps using React, Node.js, MongoDB & Firebase — and also produce engaging visual content including YouTube videos, Reels, Shorts, and social media edits with storytelling, transitions, and pacing that keeps viewers hooked.
           </p>
           <div className="flex flex-wrap gap-4">
             <motion.a
@@ -65,7 +117,7 @@ const Hero = () => {
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary-light dark:border-primary-dark shadow-2xl transition-all duration-500 hover:scale-105 group">
             <img 
               src={profileImage}
-              alt="Muhammad Fuzail"
+              alt="Muhammad Fuzail - Professional MERN Stack Developer and Video Editor"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               onError={(e) => {
                 e.target.onerror = null; 
@@ -76,7 +128,7 @@ const Hero = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-6 px-4">
               <span className="text-white text-lg font-medium text-center w-full">
-                MERN Stack Developer
+                MERN + Visual Content Expert
               </span>
             </div>
           </div>

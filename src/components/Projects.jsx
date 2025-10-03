@@ -3,40 +3,45 @@ import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 
+import calculator from '../assets/images/CAL.png';
+import teacafe from '../assets/images/teacafe.png';
+import weather from '../assets/images/weather.png';
 
 const Projects = () => {
   const { darkMode } = useContext(ThemeContext);
-  
+
   const projects = [
     {
       id: 1,
       title: "Ultimate Web Calculator",
-      description: "Tired of boring calculators? Say hello to a sleek, ultra-modern, and super-responsive calculator that not only looks great but also handles complex math like a pro!",
+      description:
+        "Tired of boring calculators? Say hello to a sleek, ultra-modern, and super-responsive calculator that not only looks great but also handles complex math like a pro!",
       technologies: ["HTML", "CSS", "JavaScript"],
-      imageUrl: "https://media-hosting.imagekit.io/d651347a380946e1/CAL.png?Expires=1838655267&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=WQ2m9H-Wa4eX6al9Oe3brygTMuKqRpOdEkFfBesz4wFNr5gX9bAWSnGOSwjIjKcuu4oI-zecLt-Lyt90iJes3bEyWkmslFofynRYkCvdtkRyttp9LLham4aERVffMx-3Y~WaO1SLz5HUSmsbtXaAomhqxpaQm8gX9sIEBYOK203uS8~Em1iv2ml~ZybuoNHf6QIe1hyI5yoZb-CS45Nj9hX0Dt~tte12GdTGSHCt86AXyK9Jdssws0BZFKw-QdFMfM-etB62OapjujZbPzaH9mpoSuDuRmX4Z~13M13PMVwZqWXDHLxyk-Qsarf4CEeXImeeQS9rex-8yeDudXfZIw__",
+      imageUrl: calculator,
       liveUrl: "https://calculator-vi8h.vercel.app/",
-      codeUrl: "https://github.com/fuzail142/calculator"
+      codeUrl: "https://github.com/fuzail142/calculator",
     },
     {
       id: 2,
-      title: "weather app",
-      description: "Designed with a modern UI, smooth animations, and a beautiful gradient background, this app delivers real-time weather updates for any city. Built using React and enhanced with Framer Motion, it ensures a seamless user experience across all devices.",
+      title: "Weather App",
+      description:
+        "Designed with a modern UI, smooth animations, and a beautiful gradient background, this app delivers real-time weather updates for any city. Built using React and enhanced with Framer Motion, it ensures a seamless user experience across all devices.",
       technologies: ["React", "CSS", "Framer Motion", "Open-Meteo API"],
-      imageUrl: "https://media-hosting.imagekit.io/18f9eae7b72a4fb7/Screenshot%202025-04-07%20224044.png?Expires=1838655739&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=YRV~Xt4BWUuMXmbguUlN-s70z7-uO6pz09LzS0hxpgcskvSwe1UWRiYiOdUticu-rf6TqGIhwWaDdenBaEPB5oj2AOMzUr3n-TJeB-6LxN0fspUArohbW~FSPSXn5VYkyZFoQe3mLYJKD4WsMEvaJ~tcr4SlTOBA5dh1ac9xBSWVvpLw0-doSPsgmiSvDVquz6v1czvFaOuBYaaVg-A-NrYZl0RTUgPNcdWXdbAniIlrzT961waeAGAfInZgC0bgfGlJWqDQ20I0CwVnNjgImd4d1fy8GihlaqRbA-n7M3PUPP8461qNbTtOmEW0M1AIREthlqMZWdRU95GmGs39SA__",
+      imageUrl: weather,
       liveUrl: "https://net-weather.vercel.app/",
-      codeUrl: "https://github.com/fuzail142/beat-weather"
+      codeUrl: "https://github.com/fuzail142/beat-weather",
     },
     {
       id: 3,
-      title: "taecafe",
-      description: "TeaCafe is a modern, responsive e-commerce website designed for tea enthusiasts. Built with React, Vite, and Tailwind CSS, this project showcases a beautiful UI with smooth animations, a functional shopping cart, and an intuitive filtering system.",
-      technologies: ["React,vite", "TailwindCSS", "Framer Motion", "React icons"],
-      imageUrl: "https://media-hosting.imagekit.io/d3a149c97ae644e9/Screenshot%202025-04-18%20040145.png?Expires=1839539072&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=cGc~D~L40tGf6K9wH6tOPEtZCc3DCRhs-ncO7rAHiis36a-Z5WZZcJEcFrv4zOtW1vC9-bXOocx1CnOG84kvb2Xa7fXOtA8VyBdyTTRrVOufo4O9pTKMzzrEAV1z5rvlPjk~dvEOedOnc56MLY-ahBn5yCyp-13UiP~YJKQqUrS4Im7wz~~UX7W3r8xaMEUekzYc7TCS2R~~s1XIjWPt74FSKtoRx0FX93rU4iWTs2i4-uJ5ZonH9a4AMGFb8v-RcJsn8Z~Pw1MoD~OO20kGrNlh2TYkQk8haWZzLqC4GCR0CMOSQmIGu8GW66B~h0Qc0ga0nK5xR-0QzgSBPJnlSg__",
+      title: "TeaCafe",
+      description:
+        "TeaCafe is a modern, responsive e-commerce website designed for tea enthusiasts. Built with React, Vite, and Tailwind CSS, this project showcases a beautiful UI with smooth animations, a functional shopping cart, and an intuitive filtering system.",
+      technologies: ["React", "Vite", "TailwindCSS", "Framer Motion", "React Icons"],
+      imageUrl: teacafe,
       liveUrl: "https://teacafe.vercel.app/",
-      codeUrl: "https://github.com/fuzail142/teacafe"
-    }
+      codeUrl: "https://github.com/fuzail142/teacafe",
+    },
   ];
-
   return (
     <section id="projects" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6">

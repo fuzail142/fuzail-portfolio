@@ -5,34 +5,34 @@ import { ThemeContext } from '../context/ThemeContext';
 
 const About = () => {
   const { darkMode } = useContext(ThemeContext);
-  
+
   const features = [
     {
       icon: <FaRocket className="text-3xl" />,
       title: "Speed & Performance",
-      description: "Optimized applications with lazy loading, code splitting, and modern caching techniques."
+      description: "Optimized apps with lazy loading, code splitting & modern caching techniques."
     },
     {
       icon: <FaCode className="text-3xl" />,
       title: "Full-Stack Expertise",
-      description: "From pixel-perfect UIs to robust backends, I handle all aspects with proficiency."
+      description: "From frontend to backend, I build secure, scalable, and stunning web apps."
     },
     {
       icon: <FaLightbulb className="text-3xl" />,
-      title: "Innovative Solutions",
-      description: "Solving complex challenges with elegant, scalable solutions that stand the test of time."
+      title: "Creative Problem-Solving",
+      description: "I blend creativity with logic to deliver solutions that actually move the needle."
     },
     {
       icon: <FaServer className="text-3xl" />,
-      title: "Cloud Integration",
-      description: "Experience with AWS, Firebase, and other cloud platforms for scalable deployments."
+      title: "Cloud & Firebase",
+      description: "Seamless integration with Firebase, AWS & modern cloud platforms for scale."
     }
   ];
 
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6">
-        <motion.h2 
+        <motion.h2
           className="section-title dark:text-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,9 +41,9 @@ const About = () => {
         >
           About Me
         </motion.h2>
-        
+
         <div className="flex flex-col lg:flex-row gap-12">
-          <motion.div 
+          <motion.div
             className="lg:w-1/2"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -53,17 +53,18 @@ const About = () => {
             <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-6 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark bg-clip-text text-transparent">
               Who I Am
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg leading-relaxed">
-              I'm <span className="font-semibold text-primary-light dark:text-primary-dark">Muhammad Fuzail</span>, a passionate MERN Stack Developer dedicated to creating exceptional digital experiences that drive real business results.
+            <p className="text-gray-600 dark:text-gray-300 mb-4 text-lg leading-relaxed">
+              I’m <span className="font-semibold text-primary-light dark:text-primary-dark">Muhammad Fuzail</span> — a Full-Stack MERN Developer and Visual Content Specialist.
+              I help brands, startups, and creators build high-performance web apps and scroll-stopping content that delivers real results.
             </p>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg leading-relaxed">
-              I specialize in building <span className="font-semibold">high-performance web applications</span> using cutting-edge technologies like React, Node.js, Express, and MongoDB.
+            <p className="text-gray-600 dark:text-gray-300 mb-4 text-lg leading-relaxed">
+              With a strong grip on React, Node.js, Express, MongoDB, Firebase,supabase, and Tailwind CSS, I create fast, secure, and modern applications with clean UI and seamless UX.
             </p>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-              My approach combines <span className="font-semibold">technical expertise</span> with a keen eye for <span className="font-semibold">modern design</span> to deliver solutions that are not only functional but visually stunning.
+              I also bring visual storytelling to life through pro-level video editing for YouTube and social media — mixing cinematic transitions, pacing, and creativity to capture attention and build your brand.
             </p>
           </motion.div>
-          
+
           <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((feature, index) => (
               <motion.div

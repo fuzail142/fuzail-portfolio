@@ -1,14 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Basic Meta -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./src/assets/fuzail.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><FK>Protfolio</title>
+    <title>Muhammad Fuzail | MERN Stack Developer & Video Editor | Pakistan</title>
+    <meta name="description" content="Professional MERN Stack Developer & Video Editor from Pakistan. Specializing in React, Node.js, MongoDB, and cinematic video editing with 3+ years experience." />
+    <meta name="google-site-verification" content="tCuD6PDJUhgxx8dBEJFHuyXSksUIOexO0x_CgyWpXi8" />
+    <!-- Keywords (limited to 10-15) -->
+    <meta name="keywords" content="MERN developer, React developer, Node.js, MongoDB, video editor, Pakistan developer, JavaScript expert, Tailwind CSS, frontend developer, cinematic editing" />
+    
+    <meta name="author" content="Muhammad Fuzail" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/src/assets/fuzail.png" />
+    <link rel="apple-touch-icon" href="/src/assets/fuzail.png" />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" />
+    <link rel="preload" href="/src/assets/fuzail.png" as="image" type="image/png" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fuzail-portfolio.vercel.app/" />
+    <meta property="og:title" content="Muhammad Fuzail | MERN Stack Developer & Video Editor" />
+    <meta property="og:description" content="Professional MERN Stack Developer & Video Editor with 3+ years experience in building web applications and creating cinematic video content." />
+    <meta property="og:image" content="https://fuzail-portfolio.vercel.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://fuzail-portfolio.vercel.app/" />
+    <meta name="twitter:title" content="Muhammad Fuzail | MERN Stack Developer & Video Editor" />
+    <meta name="twitter:description" content="Professional MERN Stack Developer & Video Editor with 3+ years experience in building web applications and creating cinematic video content." />
+    <meta name="twitter:image" content="https://fuzail-portfolio.vercel.app/og-image.jpg" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://fuzail-portfolio.vercel.app/" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#3a86ff" />
+    <meta name="msapplication-TileColor" content="#3a86ff" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Muhammad Fuzail",
+      "url": "https://fuzail-portfolio.vercel.app",
+      "sameAs": [
+        "https://github.com/fuzail142",
+        "https://www.linkedin.com/in/muhammad-fuzail-3980592aa/",
+        "https://www.upwork.com/freelancers/~01de921c27a4bc514e"
+      ],
+      "jobTitle": "MERN Stack Developer & Video Editor",
+      "skills": ["React", "Node.js", "MongoDB", "JavaScript", "Video Editing"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Pakistan"
+      },
+      "description": "Professional MERN Stack Developer & Video Editor with expertise in React, Node.js, MongoDB, and video editing software.",
+      "image": "https://fuzail-portfolio.vercel.app/og-image.jpg"
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1F52KHY4HC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1F52KHY4HC');
+    </script>
   </head>
+
   <body>
+    <!-- Hidden image to utilize preload -->
+    <img src="/src/assets/fuzail.png" alt="" style="display:none" width="200" height="200" id="preload-image">
+    
+    <!-- SEO-friendly hidden heading -->
+    <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">
+      Muhammad Fuzail - Professional MERN Stack Developer & Video Editor from Pakistan
+    </h1>
+    
+    <!-- Main App Container -->
     <div id="root"></div>
+    
+    <!-- Vite Script -->
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Performance Monitoring -->
+    <script>
+      // Ensure preloaded image is used
+      document.getElementById('preload-image').onload = function() {
+        console.log('Preloaded image successfully loaded');
+      };
+      
+      // Service Worker Registration (optional)
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('ServiceWorker registered'))
+            .catch(err => console.error('ServiceWorker registration failed:', err));
+        });
+      }
+    </script>
   </body>
 </html>
