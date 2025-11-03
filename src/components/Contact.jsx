@@ -3,9 +3,11 @@ import { FaLinkedin, FaEnvelope, FaGlobe, FaPaperPlane, FaInstagram } from 'reac
 import { useContext, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { ThemeContext } from '../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
   const { darkMode } = useContext(ThemeContext);
+  const { t } = useTranslation();
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -14,11 +16,11 @@ const Contact = () => {
     emailjs.sendForm('service_x6e9xfd', 'template_zsffkrc', form.current, 'heaUqJPof_zyfDjBE')
       .then((result) => {
         console.log('Email sent:', result.text);
-        alert('Message sent successfully!');
+        alert(t('contact.successMessage', 'Message sent successfully!'));
         form.current.reset();
       }, (error) => {
         console.error('Error:', error.text);
-        alert('Something went wrong. Please try again later.');
+        alert(t('contact.errorMessage', 'Something went wrong. Please try again later.'));
       });
   };
 
@@ -44,7 +46,7 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Get In Touch
+          {t('contact.title')}
         </motion.h2>
         
         <div className="flex flex-col lg:flex-row gap-12">
@@ -57,36 +59,36 @@ const Contact = () => {
           >
             <form ref={form} onSubmit={sendEmail} className="space-y-6 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
               <div>
-                <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Your Name</label>
+                <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">{t('contact.name')}</label>
                 <input
                   type="text"
                   name="user_name"
                   id="name"
                   required
                   className="w-full px-5 py-4 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white/70 dark:bg-gray-700/50 backdrop-blur-sm"
-                  placeholder="John Doe"
+                  placeholder={t('contact.namePlaceholder')}
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Email Address</label>
+                <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">{t('contact.email')}</label>
                 <input
                   type="email"
                   name="user_email"
                   id="email"
                   required
                   className="w-full px-5 py-4 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white/70 dark:bg-gray-700/50 backdrop-blur-sm"
-                  placeholder="your.email@example.com"
+                  placeholder={t('contact.emailPlaceholder')}
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Your Message</label>
+                <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">{t('contact.message')}</label>
                 <textarea
                   name="message"
                   id="message"
                   rows={5}
                   required
                   className="w-full px-5 py-4 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white/70 dark:bg-gray-700/50 backdrop-blur-sm"
-                  placeholder="Hello Muhammad, I'd like to discuss a project..."
+                  placeholder={t('contact.messagePlaceholder')}
                 ></textarea>
               </div>
               <motion.button
@@ -96,7 +98,7 @@ const Contact = () => {
                 whileTap={{ scale: 0.98 }}
               >
                 <FaPaperPlane />
-                Send Message
+                {t('contact.sendMessage')}
               </motion.button>
             </form>
           </motion.div>
@@ -111,7 +113,7 @@ const Contact = () => {
           >
             <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/20 dark:border-gray-700/50">
               <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-8 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark bg-clip-text text-transparent">
-                Contact Information
+                {t('contact.contactInfo')}
               </h3>
               <div className="space-y-6">
                 {/* Email */}
@@ -159,12 +161,12 @@ const Contact = () => {
                   <div className="overflow-hidden">
                     <h4 className="font-medium text-gray-700 dark:text-gray-300">Upwork</h4>
                     <a 
-                      href="https://www.upwork.com/freelancers/~01de921c27a4bc514e" 
+                      href="https://www.upwork.com/freelancers/~01b1f400644c3e1920" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-primary-light dark:text-primary-dark hover:underline break-all"
                     >
-                      upwork.com/freelancers/~01de921c27a4bc514e
+                     upwork.com/freelancers/~01b1f400644c3e1920
                     </a>
                   </div>
                 </div>
@@ -176,13 +178,13 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-700 dark:text-gray-300">Location</h4>
-                    <p className="text-gray-600 dark:text-gray-400">Karachi Division, Sindh, Pakistan</p>
+                    <p className="text-gray-600 dark:text-gray-400">{t('contact.location')}</p>
                   </div>
                 </div>
 
                 {/* Social Links */}
                 <div className="pt-6 mt-6 border-t border-gray-200 dark:border-gray-700">
-                  <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-4">Also find me on:</h4>
+                  <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-4">{t('contact.alsoFindMe')}</h4>
                   <div className="flex gap-4">
                     <a 
                       href="https://www.instagram.com/sheikh_fuzail_27788/" 
@@ -201,7 +203,7 @@ const Contact = () => {
                       <FaLinkedin className="text-xl" />
                     </a>
                     <a 
-                      href="https://www.upwork.com/freelancers/~01de921c27a4bc514e" 
+                      href="https://www.upwork.com/freelancers/~01b1f400644c3e1920" 
                       className="p-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
                       target="_blank" 
                       rel="noopener noreferrer"

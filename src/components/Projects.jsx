@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 import calculator from '../assets/images/CAL.png';
 import teacafe from '../assets/images/teacafe.png';
@@ -9,13 +10,13 @@ import weather from '../assets/images/weather.png';
 
 const Projects = () => {
   const { darkMode } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   const projects = [
     {
       id: 1,
-      title: "Ultimate Web Calculator",
-      description:
-        "Tired of boring calculators? Say hello to a sleek, ultra-modern, and super-responsive calculator that not only looks great but also handles complex math like a pro!",
+      title: t('projects.calculator.title'),
+      description: t('projects.calculator.description'),
       technologies: ["HTML", "CSS", "JavaScript"],
       imageUrl: calculator,
       liveUrl: "https://calculator-vi8h.vercel.app/",
@@ -23,9 +24,8 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Weather App",
-      description:
-        "Designed with a modern UI, smooth animations, and a beautiful gradient background, this app delivers real-time weather updates for any city. Built using React and enhanced with Framer Motion, it ensures a seamless user experience across all devices.",
+      title: t('projects.weather.title'),
+      description: t('projects.weather.description'),
       technologies: ["React", "CSS", "Framer Motion", "Open-Meteo API"],
       imageUrl: weather,
       liveUrl: "https://net-weather.vercel.app/",
@@ -33,15 +33,15 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "TeaCafe",
-      description:
-        "TeaCafe is a modern, responsive e-commerce website designed for tea enthusiasts. Built with React, Vite, and Tailwind CSS, this project showcases a beautiful UI with smooth animations, a functional shopping cart, and an intuitive filtering system.",
+      title: t('projects.teacafe.title'),
+      description: t('projects.teacafe.description'),
       technologies: ["React", "Vite", "TailwindCSS", "Framer Motion", "React Icons"],
       imageUrl: teacafe,
       liveUrl: "https://teacafe.vercel.app/",
       codeUrl: "https://github.com/fuzail142/teacafe",
     },
   ];
+
   return (
     <section id="projects" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6">
@@ -52,7 +52,7 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          My Projects
+          {t('projects.title')}
         </motion.h2>
         <motion.p 
           className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto"
@@ -61,7 +61,7 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Here are some of my recent projects. Each one was built to solve specific problems and deliver exceptional user experiences.
+          {t('projects.description')}
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -109,7 +109,7 @@ const Projects = () => {
                     className="flex items-center text-primary-light dark:text-primary-dark hover:underline"
                   >
                     <FaExternalLinkAlt className="mr-1" />
-                    Live Demo
+                    {t('projects.liveDemo')}
                   </a>
                   <a
                     href={project.codeUrl}
@@ -118,7 +118,7 @@ const Projects = () => {
                     className="flex items-center text-gray-600 dark:text-gray-400 hover:underline"
                   >
                     <FaGithub className="mr-1" />
-                    View Code
+                    {t('projects.viewCode')}
                   </a>
                 </div>
               </div>
@@ -139,7 +139,7 @@ const Projects = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border border-primary-light dark:border-primary-dark text-primary-light dark:text-primary-dark hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors"
           >
-            View All Projects
+            {t('projects.viewAll')}
             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>

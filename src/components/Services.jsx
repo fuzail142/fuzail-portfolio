@@ -2,46 +2,48 @@ import { motion } from 'framer-motion';
 import { FaCode, FaVideo, FaMobile, FaServer, FaPaintBrush, FaChartLine } from 'react-icons/fa';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
   const { darkMode } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   const services = [
     {
       icon: <FaCode className="text-4xl" />,
-      title: "Web Development",
-      description: "Custom, responsive websites built with React, Next.js, and modern frameworks for optimal performance and user experience.",
-      items: ["React/Next.js", "Tailwind CSS", "Redux", "TypeScript"]
+      title: t('services.webDev.title'),
+      description: t('services.webDev.description'),
+      items: t('services.webDev.items', { returnObjects: true })
     },
     {
       icon: <FaServer className="text-4xl" />,
-      title: "Backend Services",
-      description: "Scalable backend solutions with Node.js, Express, and database integration for your web applications.",
-      items: ["Node.js", "Express", "MongoDB", "Firebase"]
+      title: t('services.backend.title'),
+      description: t('services.backend.description'),
+      items: t('services.backend.items', { returnObjects: true })
     },
     {
       icon: <FaVideo className="text-4xl" />,
-      title: "Video Editing",
-      description: "Professional video editing for YouTube, social media, and marketing content with cinematic effects.",
-      items: ["Premiere Pro", "After Effects", "CapCut", "DaVinci Resolve"]
+      title: t('services.video.title'),
+      description: t('services.video.description'),
+      items: t('services.video.items', { returnObjects: true })
     },
     {
       icon: <FaMobile className="text-4xl" />,
-      title: "Mobile Development",
-      description: "Cross-platform mobile applications built with React Native for iOS and Android.",
-      items: ["React Native", "Expo", "Firebase", "App Store Deployment"]
+      title: t('services.mobile.title'),
+      description: t('services.mobile.description'),
+      items: t('services.mobile.items', { returnObjects: true })
     },
     {
       icon: <FaPaintBrush className="text-4xl" />,
-      title: "UI/UX Design",
-      description: "Beautiful, intuitive interfaces designed to enhance user engagement and satisfaction.",
-      items: ["Figma", "Adobe XD", "User Flows", "Prototyping"]
+      title: t('services.design.title'),
+      description: t('services.design.description'),
+      items: t('services.design.items', { returnObjects: true })
     },
     {
       icon: <FaChartLine className="text-4xl" />,
-      title: "SEO Optimization",
-      description: "Improve your search rankings and online visibility with technical and content SEO.",
-      items: ["Keyword Research", "On-Page SEO", "Technical SEO", "Analytics"]
+      title: t('services.seo.title'),
+      description: t('services.seo.description'),
+      items: t('services.seo.items', { returnObjects: true })
     }
   ];
 
@@ -55,7 +57,7 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          My Services
+          {t('services.title')}
         </motion.h2>
         
         <motion.p 
@@ -65,7 +67,7 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          I offer comprehensive digital solutions to help your business thrive online. From development to content creation, I've got you covered.
+          {t('services.description')}
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -93,7 +95,7 @@ const Services = () => {
               <p className="text-gray-600 dark:text-gray-300 mb-6">{service.description}</p>
               
               <div className="space-y-2">
-                <h4 className="font-medium text-gray-700 dark:text-gray-300">Includes:</h4>
+                <h4 className="font-medium text-gray-700 dark:text-gray-300">{t('services.includes', 'Includes:')}</h4>
                 <ul className="flex flex-wrap gap-2">
                   {service.items.map((item, itemIndex) => (
                     <li 
@@ -120,7 +122,7 @@ const Services = () => {
             href="#contact"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark text-white hover:shadow-xl rounded-lg font-medium transition-all"
           >
-            Get a Free Consultation
+            {t('services.consultation')}
           </a>
         </motion.div>
       </div>

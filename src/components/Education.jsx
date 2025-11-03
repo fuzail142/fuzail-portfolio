@@ -1,22 +1,25 @@
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaCertificate } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const Education = () => {
+  const { t } = useTranslation();
+
   const education = [
     {
       id: 1,
-      institution: 'S.M.I.T (Saylani Mass I.T Training)',
-      degree: 'MERN Stack Developer Certification',
-      period: 'January 2023 - January 2025',
-      description: 'Comprehensive training in modern web development technologies including React, Node.js, Express, and MongoDB with hands-on project experience.',
+      institution: t('education.smit.institution'),
+      degree: t('education.smit.degree'),
+      period: t('education.smit.period'),
+      description: t('education.smit.description'),
       icon: <FaGraduationCap className="text-2xl" />
     },
     {
       id: 2,
-      institution: 'JavaScript Essentials 1',
-      degree: 'Cisco Certification',
-      period: '2023',
-      description: 'Certified in JavaScript fundamentals and programming concepts with focus on modern ES6+ features and best practices.',
+      institution: t('education.cisco.institution'),
+      degree: t('education.cisco.degree'),
+      period: t('education.cisco.period'),
+      description: t('education.cisco.description'),
       icon: <FaCertificate className="text-2xl" />
     }
   ];
@@ -31,7 +34,7 @@ const Education = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Education & Certifications
+          {t('education.title')}
         </motion.h2>
         
         <div className="relative">

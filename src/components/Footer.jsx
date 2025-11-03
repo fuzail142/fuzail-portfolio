@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaEnvelope, FaGithub } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-gradient-to-r from-blue-600 to-purple-600 text-white pt-16 pb-8">
       <div className="container mx-auto px-6">
@@ -50,7 +53,7 @@ const Footer = () => {
               <FaGithub className="text-2xl" />
             </a>
             <a 
-              href="https://www.upwork.com/freelancers/~01de921c27a4bc514e" 
+              href="https://www.upwork.com/freelancers/~01b1f400644c3e1920" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-white hover:text-blue-200 transition-colors"
@@ -74,8 +77,8 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p>&copy; {new Date().getFullYear()} Muhammad Fuzail. All rights reserved.</p>
-          <p className="mt-2 text-sm">Built with React, Tailwind CSS, and ❤️</p>
+          <p>&copy; {new Date().getFullYear()} Muhammad Fuzail. {t('footer.rights')}</p>
+          <p className="mt-2 text-sm">{t('footer.builtWith')}</p>
         </motion.div>
       </div>
     </footer>

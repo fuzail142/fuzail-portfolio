@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 const Skills = () => {
   const { darkMode } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   const skills = [
     // 💻 Development Skills
@@ -21,11 +23,11 @@ const Skills = () => {
     { name: 'AWS', level: 70, color: 'from-yellow-500 to-orange-600' },
 
     // 🎬 Video & Content Creation Skills
-    { name: 'Video Editing (YouTube, Shorts, Reels)', level: 88, color: 'from-pink-500 to-purple-600' },
-    { name: 'Storytelling & Script Structuring', level: 80, color: 'from-purple-500 to-indigo-600' },
-    { name: 'Cinematic Transitions & Effects', level: 82, color: 'from-red-500 to-pink-600' },
-    { name: 'Color Grading & Sound Sync', level: 78, color: 'from-indigo-500 to-violet-600' },
-    { name: 'Content Repurposing Strategy', level: 75, color: 'from-green-500 to-emerald-600' },
+    { name: t('skills.videoEditing', 'Video Editing (YouTube, Shorts, Reels)'), level: 88, color: 'from-pink-500 to-purple-600' },
+    { name: t('skills.storytelling', 'Storytelling & Script Structuring'), level: 80, color: 'from-purple-500 to-indigo-600' },
+    { name: t('skills.cinematic', 'Cinematic Transitions & Effects'), level: 82, color: 'from-red-500 to-pink-600' },
+    { name: t('skills.colorGrading', 'Color Grading & Sound Sync'), level: 78, color: 'from-indigo-500 to-violet-600' },
+    { name: t('skills.contentStrategy', 'Content Repurposing Strategy'), level: 75, color: 'from-green-500 to-emerald-600' },
   ];
 
   return (
@@ -38,7 +40,7 @@ const Skills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          My Skills
+          {t('skills.title')}
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

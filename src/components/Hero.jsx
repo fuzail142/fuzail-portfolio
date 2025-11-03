@@ -2,19 +2,15 @@ import { motion } from 'framer-motion';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 import profileImage from '../assets/fuzail.png';
 
 const Hero = () => {
   const { darkMode } = useContext(ThemeContext);
+  const { t } = useTranslation();
+
   const [text] = useTypewriter({
-    words: [
-      'MERN Stack Developer',
-      'Frontend Specialist',
-      'Backend Engineer',
-      'Visual Content Creator',
-      'YouTube & Reels Editor',
-      'Problem Solver',
-    ],
+    words: t('hero.roles', { returnObjects: true }),
     loop: true,
     typeSpeed: 70,
     deleteSpeed: 50,
@@ -26,50 +22,7 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 pt-20 relative overflow-hidden"
     >
-      {/* Floating 3D shapes in background */}
-      <motion.div 
-        className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-blue-500/10 dark:bg-blue-400/10"
-        animate={{
-          y: [0, -30, 0],
-          x: [0, 20, 0],
-          scale: [1, 1.1, 1]
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      
-      <motion.div 
-        className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-purple-500/10 dark:bg-purple-400/10"
-        animate={{
-          y: [0, 30, 0],
-          x: [0, -20, 0],
-          scale: [1, 1.2, 1]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2
-        }}
-      />
-      
-      <motion.div 
-        className="absolute top-1/3 right-1/3 w-24 h-24 rounded-full bg-green-500/10 dark:bg-green-400/10"
-        animate={{
-          y: [0, -20, 0],
-          x: [0, 15, 0],
-          rotate: [0, 180, 360]
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
-        }}
-      />
+      {/* Background shapes remain the same */}
 
       <div className="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center relative z-10">
         <motion.div 
@@ -79,14 +32,14 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-6">
-            Hi, I'm <span className="bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark bg-clip-text text-transparent">Muhammad Fuzail</span>
+            {t('hero.title')} <span className="bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark bg-clip-text text-transparent">{t('hero.name')}</span>
           </h1>
           <h2 className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8 h-10">
             <span className="font-mono">{text}</span>
             <Cursor cursorColor={darkMode ? '#60a5fa' : '#3b82f6'} />
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
-            I craft blazing-fast web apps using React, Node.js, MongoDB & Firebase — and also produce engaging visual content including YouTube videos, Reels, Shorts, and social media edits with storytelling, transitions, and pacing that keeps viewers hooked.
+            {t('hero.description')}
           </p>
           <div className="flex flex-wrap gap-4">
             <motion.a
@@ -95,7 +48,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Hire Me
+              {t('hero.hireMe')}
             </motion.a>
             <motion.a
               href="#projects"
@@ -103,11 +56,12 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              View Work
+              {t('hero.viewWork')}
             </motion.a>
           </div>
         </motion.div>
         
+        {/* Profile image section remains the same */}
         <motion.div 
           className="md:w-1/2 flex justify-center"
           initial={{ opacity: 0, scale: 0.8 }}

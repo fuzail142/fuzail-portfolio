@@ -16,7 +16,7 @@ const SEO = ({
     "sameAs": [
       "https://github.com/fuzail142",
       "https://www.linkedin.com/in/muhammad-fuzail-3980592aa/",
-      "https://www.upwork.com/freelancers/~01de921c27a4bc514e"
+      "https://www.upwork.com/freelancers/~01b1f400644c3e1920"
     ],
     "jobTitle": "MERN Stack Developer & Video Editor",
     "address": {

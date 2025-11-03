@@ -2,30 +2,32 @@ import { motion } from 'framer-motion';
 import { FaRocket, FaCode, FaLightbulb, FaServer } from 'react-icons/fa';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { useTranslation, Trans } from 'react-i18next';
 
 const About = () => {
   const { darkMode } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   const features = [
     {
       icon: <FaRocket className="text-3xl" />,
-      title: "Speed & Performance",
-      description: "Optimized apps with lazy loading, code splitting & modern caching techniques."
+      title: t('about.features.speed.title'),
+      description: t('about.features.speed.description')
     },
     {
       icon: <FaCode className="text-3xl" />,
-      title: "Full-Stack Expertise",
-      description: "From frontend to backend, I build secure, scalable, and stunning web apps."
+      title: t('about.features.fullstack.title'),
+      description: t('about.features.fullstack.description')
     },
     {
       icon: <FaLightbulb className="text-3xl" />,
-      title: "Creative Problem-Solving",
-      description: "I blend creativity with logic to deliver solutions that actually move the needle."
+      title: t('about.features.creative.title'),
+      description: t('about.features.creative.description')
     },
     {
       icon: <FaServer className="text-3xl" />,
-      title: "Cloud & Firebase",
-      description: "Seamless integration with Firebase, AWS & modern cloud platforms for scale."
+      title: t('about.features.cloud.title'),
+      description: t('about.features.cloud.description')
     }
   ];
 
@@ -39,7 +41,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          About Me
+          {t('about.title')}
         </motion.h2>
 
         <div className="flex flex-col lg:flex-row gap-12">
@@ -51,17 +53,18 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-6 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark bg-clip-text text-transparent">
-              Who I Am
+              {t('about.whoIAm')}
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4 text-lg leading-relaxed">
-              I’m <span className="font-semibold text-primary-light dark:text-primary-dark">Muhammad Fuzail</span> — a Full-Stack MERN Developer and Visual Content Specialist.
-              I help brands, startups, and creators build high-performance web apps and scroll-stopping content that delivers real results.
+              <Trans i18nKey="about.intro" values={{ name: "Muhammad Fuzail" }}>
+                I'm <span className="font-semibold text-primary-light dark:text-primary-dark">Muhammad Fuzail</span> — a Full-Stack MERN Developer and Visual Content Specialist. I help brands, startups, and creators build high-performance web apps and scroll-stopping content that delivers real results.
+              </Trans>
             </p>
             <p className="text-gray-600 dark:text-gray-300 mb-4 text-lg leading-relaxed">
-              With a strong grip on React, Node.js, Express, MongoDB, Firebase,supabase, and Tailwind CSS, I create fast, secure, and modern applications with clean UI and seamless UX.
+              {t('about.description')}
             </p>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-              I also bring visual storytelling to life through pro-level video editing for YouTube and social media — mixing cinematic transitions, pacing, and creativity to capture attention and build your brand.
+              {t('about.additional')}
             </p>
           </motion.div>
 
